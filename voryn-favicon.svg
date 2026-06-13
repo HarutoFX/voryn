@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <!-- Cyan and Electric Blue linear gradient for layout wireframes -->
+    <linearGradient id="voryn-line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#004cff" />
+    </linearGradient>
+
+    <!-- Glowing central core radial gradient -->
+    <radialGradient id="voryn-core-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#004cff" />
+    </radialGradient>
+
+    <!-- Ambient glowing aura back-projection -->
+    <radialGradient id="voryn-ambient-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.26" />
+      <stop offset="100%" stop-color="#004cff" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Professional real-time SVG Glow Filter -->
+    <filter id="voryn-glow-filter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.0" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g id="voryn-favicon-group">
+    <!-- Globe Silhouette Outer Ring -->
+    <circle cx="64" cy="64" r="58" fill="none" stroke="#004cff" stroke-opacity="0.15" stroke-width="1" />
+
+    <!-- Ambient Glow Aura behind the globe -->
+    <circle cx="64" cy="64" r="52" fill="url(#voryn-ambient-glow)" opacity="0.6" pointer-events="none" />
+
+    <!-- 3D Latitude Ellipses (Globe grid lines) -->
+    <ellipse cx="64" cy="64" rx="54" ry="18" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1.2" stroke-opacity="0.32" stroke-dasharray="3 3" />
+    
+    <ellipse cx="64" cy="64" rx="54" ry="36" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1" stroke-opacity="0.2" />
+    <ellipse cx="64" cy="64" rx="18" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1" stroke-opacity="0.2" />
+
+    <!-- 3D Longitude Ellipses -->
+    <ellipse cx="64" cy="64" rx="18" ry="54" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1.5" stroke-opacity="0.4" />
+    <ellipse cx="64" cy="64" rx="38" ry="54" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1.0" stroke-opacity="0.2" />
+
+    <!-- Sweeping neural connectivities -->
+    
+    <!-- Structural diagonal supports to the core -->
+    <path d="M 28 32 L 48 48 L 64 64" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1.5" stroke-opacity="0.4" />
+    <path d="M 100 32 L 80 48 L 64 64" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1.5" stroke-opacity="0.4" />
+    <path d="M 28 96 L 48 80 L 64 64" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1.5" stroke-opacity="0.4" />
+    <path d="M 100 96 L 80 80 L 64 64" fill="none" stroke="url(#voryn-line-grad)" stroke-width="1.5" stroke-opacity="0.4" />
+    
+
+    <!-- Concentric central ring alignment grid -->
+    <line x1="12" y1="64" x2="116" y2="64" stroke="url(#voryn-line-grad)" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="2 2" />
+    <line x1="64" y1="12" x2="64" y2="116" stroke="url(#voryn-line-grad)" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="2 2" />
+
+    <!-- Outer glass framing layer for the AI Core -->
+    <circle cx="64" cy="64" r="23" fill="none" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.35" stroke-dasharray="4 3" />
+
+    <!-- Pulse Ring Animation mimicking a heartbeat / computing state -->
+    <circle cx="64" cy="64" r="14" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#voryn-glow-filter)" opacity="0.8">
+      <animate attributeName="r" values="14; 22; 14" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.85; 0.25; 0.85" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Central AI Core Power Crystal -->
+    <circle cx="64" cy="64" r="11" fill="url(#voryn-core-grad)" filter="url(#voryn-glow-filter)" />
+    
+    <!-- Central crystalline spark facet (Works beautiful for Linear/Apple minimalism) -->
+    <path d="M 64 48 Q 64 64, 48 64 Q 64 64, 64 80 Q 64 64, 80 64 Q 64 64, 64 48 Z" fill="#ffffff" filter="url(#voryn-glow-filter)" opacity="0.95">
+      <animate attributeName="opacity" values="0.95; 0.60; 0.95" dur="1.25s" repeatCount="indefinite" />
+    </path>
+    <!-- Solid white tiny core to maintain high readability at tiny scales (16x16 / 32x32) -->
+    <circle cx="64" cy="64" r="3.2" fill="#ffffff" />
+
+    <!-- NEURAL NETWORK JUNCTION NODES -->
+    <!-- North Node -->
+    <circle cx="64" cy="10" r="3" fill="#ffffff" stroke="#00f0ff" stroke-width="1.5" filter="url(#voryn-glow-filter)" />
+    <!-- South Node -->
+    <circle cx="64" cy="118" r="3" fill="#ffffff" stroke="#004cff" stroke-width="1.5" filter="url(#voryn-glow-filter)" />
+    <!-- West Node -->
+    <circle cx="10" cy="64" r="3" fill="#ffffff" stroke="#00f0ff" stroke-width="1.5" filter="url(#voryn-glow-filter)" />
+    <!-- East Node -->
+    <circle cx="118" cy="64" r="3" fill="#ffffff" stroke="#004cff" stroke-width="1.5" filter="url(#voryn-glow-filter)" />
+
+    <!-- Secondary micro nodes acting as active synapses -->
+    <circle cx="28" cy="32" r="4.2" fill="#00f0ff" filter="url(#voryn-glow-filter)">
+      <animate attributeName="opacity" values="0.30; 1.00; 0.30" dur="2.1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="100" cy="32" r="4.2" fill="#004cff" filter="url(#voryn-glow-filter)">
+      <animate attributeName="opacity" values="1.00; 0.20; 1.00" dur="1.7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="28" cy="96" r="4.2" fill="#004cff" filter="url(#voryn-glow-filter)">
+      <animate attributeName="opacity" values="0.20; 0.90; 0.20" dur="2.4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="100" cy="96" r="4.2" fill="#00f0ff" filter="url(#voryn-glow-filter)">
+      <animate attributeName="opacity" values="0.80; 0.30; 0.80" dur="1.9s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Ambient interior small inactive nodes for structural detail (only balanced/network) -->
+    
+    <circle cx="48" cy="48" r="2.2" fill="#00f0ff" opacity="0.7" />
+    <circle cx="80" cy="48" r="2.2" fill="#004cff" opacity="0.7" />
+    <circle cx="48" cy="80" r="2.2" fill="#004cff" opacity="0.7" />
+    <circle cx="80" cy="80" r="2.2" fill="#00f0ff" opacity="0.7" />
+    
+
+  </g>
+</svg>
