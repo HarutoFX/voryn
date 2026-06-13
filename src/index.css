@@ -46,6 +46,21 @@
   }
 }
 
+@keyframes vorynGlow {
+  0% {
+    color: #22d3ee;
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.9);
+  }
+  50% {
+    color: #8b5cf6;
+    text-shadow: 0 0 25px rgba(139, 92, 246, 0.95);
+  }
+  100% {
+    color: #22d3ee;
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.9);
+  }
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -125,6 +140,10 @@ body {
 
 .volumetric-pulse {
   animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.voryn-logo {
+  animation: vorynGlow 3s ease-in-out infinite;
 }
 
 .premium-surface {

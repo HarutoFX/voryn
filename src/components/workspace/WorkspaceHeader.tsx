@@ -37,7 +37,7 @@ export default function WorkspaceHeader({
         <div className="w-px h-6 bg-white/10 hidden sm:block" />
         <div className="flex items-center gap-2.5">
           <div className={`h-2.5 w-2.5 rounded-full shadow-[0_0_16px_rgba(34,211,238,0.45)] ${theme === 'cyan' ? 'bg-cyan-400' : theme === 'purple' ? 'bg-purple-400' : 'bg-amber-400'}`} />
-          <span className="font-display font-semibold tracking-tight text-white flex items-center gap-2 text-[15px] sm:text-base">
+          <span className="font-display font-semibold tracking-tight flex items-center gap-2 text-[15px] sm:text-base voryn-logo">
             VORYN <span className="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-white/8 border border-white/10 font-bold tracking-[0.18em] text-slate-300">Workspace</span>
           </span>
         </div>

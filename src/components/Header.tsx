@@ -57,7 +57,7 @@ export default function Header({ theme, glow, synthEnabled, onToggleSynth, onOpe
               } animate-pulse`} />
             </div>
           </div>
-          <span className="font-display font-semibold text-xl tracking-[0.16em] text-white gap-1 flex items-center">
+          <span className="font-display font-semibold text-xl tracking-[0.16em] gap-1 flex items-center voryn-logo">
             VORYN
             <span className={`text-[10px] font-mono border px-1.5 py-0.5 rounded-full ${
               theme === 'cyan' ? 'border-cyan-500/30 text-cyan-400' : theme === 'purple' ? 'border-purple-500/30 text-purple-400' : 'border-amber-500/30 text-amber-400'
@@ -165,10 +165,10 @@ export default function Header({ theme, glow, synthEnabled, onToggleSynth, onOpe
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-5">
               {['Protocol', 'Features', 'System IDE', 'Analytics', 'Licensing'].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  onClick={() => setMobileMenuOpen(false)}
+              <a
+                key={item}
+                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                onClick={() => setMobileMenuOpen(false)}
                 className="text-lg font-medium text-slate-300 hover:text-white transition-colors"
               >
                 {item}
