@@ -1,0 +1,6 @@
+{
+  "name": "VORYN",
+  "description": "VORYN is a neural intelligence workspace for reasoning, memory, vision, and tool-assisted workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_TOOL_USE"]
+}

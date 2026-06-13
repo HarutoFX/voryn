@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --shadow-glow-cyan: 0 0 0 1px rgba(34, 211, 238, 0.12), 0 20px 60px rgba(2, 8, 23, 0.45), 0 0 30px rgba(34, 211, 238, 0.08);
+  
+  --color-brand-cyan: #22d3ee;
+  --color-brand-blue: #3b82f6;
+  --color-brand-purple: #a855f7;
+  --color-brand-deep: #030014;
+}
+
+@layer utilities {
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.2);
+  }
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5), 0 0 20px rgba(168, 85, 247, 0.2);
+  }
+  .border-glow {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15), inset 0 0 15px rgba(34, 211, 238, 0.05);
+  }
+}
+
+/* Custom global animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes gridPan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 40px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030014;
+}
+::-webkit-scrollbar-thumb {
+  background: #151138;
+  border-radius: 9999px;
+  border: 2px solid #030014;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #25215a;
+}
+
+/* Selection aesthetics */
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+  color: #ffffff;
+}
+
+/* Set up the background grid and body defaults */
+body {
+  background-color: #030014;
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body, 
+  body * {
+    cursor: none !important;
+  }
+}
+
+/* Perspective variables / classes for realistic 3D tipping */
+.perspective-card-container {
+  perspective: 1200px;
+}
+
+.perspective-element {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.depth-layer {
+  transform: translateZ(24px);
+}
+
+.reflection-overlay {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 60%);
+  pointer-events: none;
+}
+
+/* Ambient grids and lighting styles */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+}
+
+.pan-grid {
+  animation: gridPan 20s linear infinite;
+}
+
+.radial-mask {
+  mask-image: radial-gradient(circle, black 30%, transparent 80%);
+}
+
+.volumetric-pulse {
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.premium-surface {
+  background: linear-gradient(180deg, rgba(11, 16, 36, 0.78) 0%, rgba(4, 6, 20, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 80px rgba(2, 6, 23, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+}
+
+.premium-surface-strong {
+  background: linear-gradient(180deg, rgba(9, 13, 30, 0.92) 0%, rgba(3, 5, 16, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 90px rgba(1, 4, 12, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(28px);
+}
+
+.premium-button {
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.premium-button:hover {
+  transform: translateY(-1px);
+}
+
+.premium-button:active {
+  transform: translateY(0);
+}
+
+.premium-input {
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.premium-input:focus {
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.22), 0 0 0 4px rgba(34, 211, 238, 0.08);
+}
+
+canvas {
+  display: block;
+}
